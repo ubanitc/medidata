@@ -314,7 +314,7 @@
                                                 <div class="w-50" >
                                                     <label class="form-check form-switch">
                                                         <input class="form-check-input" type="checkbox" wire:click="toggleProperties({{$contents->id}}, {{ $contents->status }}, {{ $contents->type }})"  {{ $contents->status ? 'checked': '' }}>
-                                                    </label> 
+                                                    </label>
 {{--                                                    <button x-data="{--}}
 {{--                                                    checkSign :  {{ $contents->status}}--}}
 {{--                                                }"--}}

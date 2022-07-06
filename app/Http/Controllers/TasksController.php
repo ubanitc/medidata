@@ -12,8 +12,8 @@ class TasksController extends Controller
     public function tasks($id){
 
         $study = Study::find($id);
-       $main_query = $study->queries()->where('parent_id', null)->first();
-       $sub_query = $study->sub_queries()->where('parent_id', null)->get();
+       $main_query = $study->queries()->where('parent_id', null)->where('opened',0)->get();
+       $sub_query = $study->sub_queries()->where('parent_id', null)->where('opened',0)->get();
 
 //       dd($main_query->filename());
 
