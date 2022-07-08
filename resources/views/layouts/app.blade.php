@@ -24,12 +24,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                <a href="?theme=light" class="nav-link px-0 hide-theme-light" >
+              @if(Request::get('theme') == 'dark')
+                    <a href="{{ url('/') }}" class="nav-link px-0 hide-theme-light" >
                     <img src="{{ asset('img/white_medidata_logo.png') }}" width="110" height="20" style="height: 24px" alt="Tabler" class="navbar-brand-image">
-                </a>
-                <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" >
+                    </a>
+                @else
+
+                  <a href="{{ url('/') }}" class="nav-link px-0 hide-theme-dark" >
                     <img src="{{ asset('img/blackmedidata_logo.png') }}" width="110" height="20" style="height: 24px" alt="Tabler" class="navbar-brand-image">
                 </a>
+                  @endif
             </h1>
             <div class="navbar-nav flex-row order-md-last">
                 <div class="nav-item d-none d-md-flex me-3">
