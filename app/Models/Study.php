@@ -39,6 +39,10 @@ class Study extends Model
         return $this->hasManyDeep(MainFilesContent::class,[Sites::class,Subject::class, MainFolder::class, MainFolderFile::class]);
     }
 
+//    public function mainFolderFile(){
+//        return $this->belongsTo(MainFolderFile::class);
+//    }
+
     public function subfileContent(){
         return$this->hasManyDeep(SubFilesContent::class,[Sites::class,Subject::class, MainFolder::class, SubFolder::class, SubFolderFile::class]);
     }

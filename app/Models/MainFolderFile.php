@@ -17,4 +17,8 @@ protected $fillable = [
     public function contents(){
         return $this->hasMany(MainFilesContent::class);
     }
+
+    public function foldername(){
+        return $this->belongsTo(MainFolder::class, 'main_folder_id');
+    }
 }

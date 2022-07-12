@@ -22,4 +22,5 @@ class Sites extends Model
     public function subjects(){
         return $this->hasMany(Subject::class);
     }
+
 }

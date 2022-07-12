@@ -16,4 +16,10 @@ class SubFolderFile extends Model
     public function contents(){
         return $this->hasMany(SubFilesContent::class);
     }
+
+    public function sub_folder(){
+        return $this->belongsTo(SubFolder::class, 'sub_folder_id');
+    }
+
+
 }

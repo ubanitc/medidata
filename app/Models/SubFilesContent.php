@@ -24,4 +24,8 @@ class SubFilesContent extends Model
         return $this->hasMany(SubNote::class);
 
     }
+
+    public function subFolderFile(){
+        return $this->belongsTo(SubFolderFile::class,'sub_folder_file_id');
+    }
 }

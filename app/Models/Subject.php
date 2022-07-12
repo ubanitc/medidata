@@ -31,4 +31,8 @@ class Subject extends Model
     public function sub_folder_files(){
         return $this->hasManyDeep(SubFolderFile::class, [ MainFolder::class , SubFolder::class]);
     }
+
+    public function site(){
+        return $this->belongsTo(Sites::class, 'sites_id');
+    }
 }

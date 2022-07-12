@@ -19,8 +19,12 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
+        <a href="{{ route('querypdf', $id) }}" class="btn btn-success mt-2">Export as PDF</a>
+
     </div>
     <div class="col-12">
         <div class="card card-sm">
@@ -42,5 +46,7 @@
                 </div>
             </div>
         </div>
+        <a href="{{ route('downloadpdf', $id) }}" class="btn btn-primary mt-2">Export as PDF</a>
+
     </div>
 @endsection

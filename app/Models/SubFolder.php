@@ -13,4 +13,9 @@ class SubFolder extends Model
         'main_folder_id',
         'folder_name',
     ];
+
+
+    public function sub_main_folder(){
+        return $this->belongsTo(MainFolder::class, 'main_folder_id');
+    }
 }

@@ -18,4 +18,8 @@ class MainFolder extends Model
         return $this->hasMany(MainFolderFile::class);
     }
 
+    public function subject(){
+        return $this->belongsTo(Subject::class);
+    }
+
 }

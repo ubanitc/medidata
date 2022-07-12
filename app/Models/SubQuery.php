@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use \Znck\Eloquent\Traits\BelongsToThrough;
+
 
 class SubQuery extends Model
 {
     use HasFactory;
+    use BelongsToThrough;
 
     protected $fillable = [
         'user_id',
@@ -24,5 +27,9 @@ class SubQuery extends Model
     public function replies()
     {
         return $this->hasMany(SubQuery::class, 'parent_id');
+    }
+
+    public function subqueryfile(){
+        return $this->belongsToThrough(SubFolderFile::class, SubFilesContent::class);
     }
 }

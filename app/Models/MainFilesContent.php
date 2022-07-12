@@ -24,10 +24,12 @@ public function queries(){
     }
 
     public function mainFolderFile(){
-    return $this->belongsTo(MainFolderFile::class, 'main_folder_file_id');
+        return $this->belongsTo(MainFolderFile::class,'main_folder_file_id');
     }
 
     public function folder(){
         return $this->hasOneThrough(MainFolder::class, MainFolderFile::class);
     }
+
+
 }

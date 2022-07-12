@@ -9,6 +9,7 @@ use App\Http\Controllers\SubjectDashboardController;
 use App\Http\Controllers\tableDashboardController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VerificationPdfController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/create-folder-content', [tableDashboardController::class, 'create_folder_content'])->name('create-folder-content');
     Route::post('/create-folder-content', [tableDashboardController::class, 'create_folder_content'])->name('create-folder-content');
     Route::get('study/{id}/tasks', [TasksController::class, 'tasks'])->name('view-tasks');
+    Route::get('study/{id}/verificationpdf', [VerificationPdfController::class, 'downloadpdf'])->name('downloadpdf');
+    Route::get('study/{id}/querypdf', [VerificationPdfController::class, 'downloadquerypdf'])->name('querypdf');
     Route::resource('/users', UserController::class);
 
 //    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
