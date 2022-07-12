@@ -64,7 +64,11 @@
 {{--                        <a href="#" class="dropdown-item">Feedback</a>--}}
                         <div class="dropdown-divider"></div>
 {{--                        <a href="#" class="dropdown-item">Settings</a>--}}
-                        <a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>
